@@ -1,0 +1,56 @@
+\documentclass[12pt,letterpaper,oneside]{book}
+
+\input{myThesis/header.tex}
+
+\graphicspath{{Figures/}}
+\input{myThesis/titlePage}	
+%\makenoidxglossaries
+\loadglsentries{myThesis/glossary}
+
+\begin{document}
+%\glossaryAcronyms
+{\frontmatter
+\flyleaf                        
+\disclaimerpage                 
+\titlepageAFIT                      
+\committeepage  }
+\phantomsection
+\input{myThesis/abstract.tex}
+\input{myThesis/dedication.tex}
+\input{myThesis/acknowledgments.tex}
+
+\phantomsection %not sure exactly what this does, but it helps with Table of Contents and References
+{
+\tableofcontents
+\glsunsetall % resets all acronyms, so all will be spelled out again
+%\listoffigures
+%\listoftables
+% UNUSED
+%\listofabbreviations
+%\listofsymbols
+	
+\mainmatter }
+\phantomsection
+\input{myThesis/01_introduction.tex}
+\phantomsection
+\input{myThesis/02_paper1.tex}
+\phantomsection
+\input{myThesis/03_paper2.tex}
+\phantomsection
+\input{myThesis/04_conclusion.tex}
+\phantomsection
+\input{myThesis/appendix.tex}
+
+\phantomsection
+%\input{myThesis/library.tex}
+\bibliographystyle{IEEEtran}
+%\bibliography{myThesis/myBibliography}
+\bibliography{myThesis/library}
+\phantomsection
+%\printnoidxglossary[sort=word,type=acronym]
+%\printglossary[type=abbrev]
+
+\backmatter
+\input{myThesis/SF298}
+
+\end{document}
